@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
         homeViewModel.fetchPullRequests(ownerName,repoName,status)
         homeViewModel.getPullList().observe(viewLifecycleOwner , Observer {list->
             if (!list.isNullOrEmpty()){
+                progress_horizontal?.visibility = View.GONE
                 pullRecycler?.adapter = pullAdapter
                 pullAdapter.addData(list)
             }

@@ -5,21 +5,33 @@
     android:animateLayoutChanges="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <ProgressBar
+        android:id="@+id/progress_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:indeterminate="true"
+        android:translationY="-7dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         >
-    <com.google.android.material.appbar.MaterialToolbar
+    <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/white"
-        app:title="@string/app_name"
+        app:title="@string/label_home"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         app:popupTheme="@style/Widget.MaterialComponents.AppBarLayout.Primary" />
@@ -32,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintTop_toBottomOf="@id/progress_horizontal"
         tools:listitem="@layout/item_pull_request"
         tools:itemCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
