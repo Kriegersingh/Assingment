@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Assingment</string>
     <string name="label_home">Home</string>
+    <string name="label_pull_requests">Pull Requests</string>
+    <string name="created_by_fmt">Created by %1s</string>
+    <string name="created_at_fmt">Created at %1s</string>
+    <string name="closed_at_fmt">Closed at %1s</string>
+    <string name="repo_fmt">%1s repo</string>
 </resources>

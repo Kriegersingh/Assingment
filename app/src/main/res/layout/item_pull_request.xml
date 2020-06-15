@@ -6,11 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:id="@+id/avatarImage"
+        android:padding="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/image_circle_background"
         app:srcCompat="@drawable/ic_user"
         />
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,8 +23,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/avatarImage"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/app_name"
-        style="@style/textViewRegular"
+        android:textAppearance="@style/rowTextLarge"
         />
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="0dp"
@@ -31,10 +34,11 @@
         app:layout_constraintTop_toBottomOf="@id/requestTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/avatarImage"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/app_name"
-        style="@style/textViewSmall"
+        android:textAppearance="@style/rowTextRegular"
         />
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="0dp"
@@ -45,7 +49,7 @@
         app:layout_constraintEnd_toStartOf="@id/closedAt"
         android:layout_margin="8dp"
         android:text="@string/app_name"
-        style="@style/textViewTiny"
+        android:textAppearance="@style/rowTextTiny"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -57,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="8dp"
         android:text="@string/app_name"
-        style="@style/textViewTiny"
+        android:textAppearance="@style/rowTextTiny"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
