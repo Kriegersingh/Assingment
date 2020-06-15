@@ -9,9 +9,9 @@ data class PullRequestDatum(
     val title: String? = null,
     val user: UserDatum? = null,
     @SerialName("created_at")
-    val createdAt: String? = null,
+    val createdAt: String,
     @SerialName("updatedAt")
     val updatedAt: String? = null,
     @SerialName("closed_at")
-    val closedAt: String? = null
+    val closedAt: String
 )

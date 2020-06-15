@@ -15,10 +15,9 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
     private val homeViewModel by viewModels<HomeViewModel>()
     private val pullAdapter by lazy { PullRequestsAdapter() }
-    private val ownerName = "huggingface"
-    private val repoName = "transformers"
+    private val owner = "Kriegersingh"
+    private val name = "Assingment"
     private val status = "closed"
-    private val accept = "application/vnd.github.sailor-v-preview+json"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +33,25 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeViewModel.fetchPullRequests(ownerName,repoName,status)
+        homeViewModel.fetchPullRequests(owner,name,status)
+        initialise()
+        setObservers()
+
+    }
+
+    private fun setObservers(){
         homeViewModel.getPullList().observe(viewLifecycleOwner , Observer {list->
             if (!list.isNullOrEmpty()){
+                repoInfo?.visibility= View.VISIBLE
+                labelPullRequests?.visibility = View.VISIBLE
                 progress_horizontal?.visibility = View.GONE
                 pullRecycler?.adapter = pullAdapter
                 pullAdapter.addData(list)
             }
         })
+    }
+    private fun initialise(){
+        repoName?.text = getString(R.string.repo_fmt,name)
+        ownerName?.text = getString(R.string.created_by_fmt,owner)
     }
 }
